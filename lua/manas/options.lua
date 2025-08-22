@@ -45,14 +45,6 @@ opt.smartindent = true -- Automatically insert indentation in certain situations
 opt.breakindent = true -- Preserve indentation for wrapped lines
 
 -----------------------------------------------------------
--- Performance and Behavior
------------------------------------------------------------
-opt.updatetime = 50 -- Faster update time for plugins and diagnostics (in ms)
-opt.timeoutlen = 300 -- Shorter timeout for key sequences (e.g., leader key)
-opt.mouse = "a" -- Enable mouse support in all modes
-
-
------------------------------------------------------------
 -- Diagnostic display inline
 -----------------------------------------------------------
 vim.diagnostic.config({
@@ -60,6 +52,10 @@ vim.diagnostic.config({
   underline = true
 })
 
+
+---- forked from kickstart
+vim.o.confirm = true
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -----------------------------------------------------------
 -- Hightlight yank
@@ -69,8 +65,17 @@ vim.api.nvim_create_autocmd("textyankpost", {
 	pattern = "*",
 	desc = "highlight selection on yank",
 	callback = function()
-		vim.highlight.on_yank({ timeout = 200, visual = true })
+		vim.highlight.on_yank()
 	end,
 })
 
-
+vim.diagnostic.config({
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '',
+      [vim.diagnostic.severity.WARN] = '',
+      [vim.diagnostic.severity.INFO] = '',
+      [vim.diagnostic.severity.HINT] = '󰌵',
+    },
+  }
+})

@@ -1,7 +1,7 @@
 return {
   require("manas.plugins.colorscheme"),
-  require("manas.plugins.nvim-tree"),
-  -- require("manas.plugins.lualine"),
+  require("manas.plugins.neo-tree"),
+  require("manas.plugins.lualine"),
   require("manas.plugins.telescope"),
   require("manas.plugins.treesitter"),
   require("manas.plugins.gitsigns"),

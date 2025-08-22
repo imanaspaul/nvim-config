@@ -1,4 +1,4 @@
-local map = vim.keymap.set 
+local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -----------------------------
@@ -60,6 +60,13 @@ vim.api.nvim_create_autocmd(
 	}
 )
 
+-- Neotree keymaps
+vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>')
+
+-- Vsplit keymap
+vim.keymap.set('n', '<leader>]', ':vsplit<CR>')
 
 
+
+-- Toogle terminal
 
