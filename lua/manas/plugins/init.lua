@@ -1,5 +1,6 @@
 return {
   require("manas.plugins.colorscheme"),
+  require("manas.plugins.conform"),
   require("manas.plugins.neo-tree"),
   require("manas.plugins.lualine"),
   require("manas.plugins.telescope"),
@@ -7,4 +8,5 @@ return {
   require("manas.plugins.gitsigns"),
   require("manas.plugins.blink"),
   require("manas.plugins.autopair"),
+  require("manas.plugins.barbar"),
 }
